@@ -13,29 +13,37 @@ Consult the directory tree below to determine the location of a specific project
 
 ```
 .
-├── basic-ruby-projects/
-│   ├── caesar-cipher/
-│   ├── sub-strings/
-│   ├── stock-picker/
-│   └── bubble-sort/
+├── 1-basic-ruby-projects/
+│   ├── 1a-caesar-cipher/
+│   ├── 1b-sub-strings/
+│   ├── 1c-stock-picker/
+│   ├── 1d-bubble-sort/
+|   └── README.md
 |
-├── object-oriented-programming/
-│   ├── tic-tac-toe/
-│   └── mastermind/
+├── 2-object-oriented-programming/
+│   ├── 2a-tic-tac-toe/
+│   ├── 2b-mastermind/
+|   └── README.md
 |
-├── files-and-serialization/
-│   ├── event-manager/
-│   └── hangman/
+├── 3-files-and-serialization/
+│   ├── 3a-event-manager/
+│   ├── 3b-hangman/
+|   └── README.md
 |
-├── advanced-ruby/
-│   └── custom-enumerables/
+├── 4-advanced-ruby/
+│   ├── 4a-custom-enumerables/
+|   └── README.md
 |
-└── comp-sci-fundamentals/
-    ├── recursion/
-    ├── linked-lists/
-    ├── hash-map/
-    ├── binary-search-trees/
-    └── knights-travails/
+├── 5-comp-sci-fundamentals/
+|   ├── 5a-recursion/
+|   ├── 5b-linked-lists/
+|   ├── 5c-hash-map/
+|   ├── 5d-binary-search-trees/
+|   ├── 5e-knights-travails/
+|   └── README.md
+|
+├── LICENSE
+└── README.md
 ```
 
 ## Technologies Used
