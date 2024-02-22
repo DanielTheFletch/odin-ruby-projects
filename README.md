@@ -1,9 +1,8 @@
 # Ruby: Assorted Projects
 
 A central hub for the majority of my early Ruby projects, all done as part of The Odin Project's web development
-curriculum. Note that this repository contains all but two (2) of the required projects in the Ruby course. The
-projects not included here&mdash;both **Conect Four** and the **Ruby Final Project**&mdash;have their own
-dedicated repositories.
+curriculum. Note that this repository contains all required projects in the Ruby course except the **Ruby Final
+Project**, which has its own dedicated repository.
 
 ## Project Lookup
 
@@ -40,6 +39,10 @@ Consult the directory tree below to determine the location of a specific project
 |   ├── 5c-hash-map/
 |   ├── 5d-binary-search-trees/
 |   ├── 5e-knights-travails/
+|   └── README.md
+|
+├── 6-testing-with-rspec/
+|   ├── 6a-connect-four/
 |   └── README.md
 |
 ├── LICENSE
