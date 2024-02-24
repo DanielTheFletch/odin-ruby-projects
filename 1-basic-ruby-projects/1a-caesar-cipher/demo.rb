@@ -3,7 +3,6 @@
 # Caesar Cipher
 
 
-# --- Demo File ---
 require "./caesar.rb"
 
 
