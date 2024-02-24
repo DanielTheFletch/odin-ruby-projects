@@ -1,10 +1,8 @@
 # Ruby: Assorted Projects
 
-A central hub for the majority of my early Ruby projects, all done as part of The Odin Project's web development
-curriculum. Note that this repository contains all required projects in the Ruby course except the **Ruby Final
-Project**, which has its own dedicated repository.
+A central hub for my first-ever Ruby projects, all done as part of The Odin Project's web development curriculum. Note that this repository contains all required projects in the introductory Ruby course except the **Ruby Final Project**, which has its own dedicated repository.
 
-## Project Lookup
+## File Structure
 
 Each root-level directory represents a module from the introductory Ruby course, and each subdirectory represents
 a given project from that module. All relevant files for a given project are contained in the corresponding subdirectory.
