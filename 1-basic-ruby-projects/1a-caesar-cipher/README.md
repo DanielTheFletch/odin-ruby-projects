@@ -1,6 +1,6 @@
 # Project 1a: Caesar Cipher
 
-My Ruby implementation of the encryption technique known as the **Caesar cipher**. Includes a demonstration file for use at the terminal.
+My Ruby implementation of the encryption technique known as the [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher). Includes a demonstration file for use at the terminal.
 
 ## Included Files
 

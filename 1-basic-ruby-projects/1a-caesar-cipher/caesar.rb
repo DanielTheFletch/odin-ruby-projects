@@ -8,9 +8,9 @@ def caesar_cipher(phrase, shift)
   shifted = phrase.chars.map do |char|
 
     # Only shift uppercase and lowercase letters
-    if upper?(char)
+    if char.between?("A", "Z")
       shift(char, shift, "A".ord)
-    elsif lower?(char)
+    elsif char.between?("a", "z")
       shift(char, shift, "a".ord)
     else
       char
@@ -19,18 +19,6 @@ def caesar_cipher(phrase, shift)
 
   # Return shifted characters as a single string
   shifted.join("")
-end
-
-
-# Helper function: Determine if a character is an uppercase letter
-def upper?(char)
-  char.between?("A", "Z")
-end
-
-
-# Helper function: Determine if a character is a lowercase letter
-def lower?(char)
-  char.between?("a", "z")
 end
 
 
