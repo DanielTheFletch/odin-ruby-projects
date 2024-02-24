@@ -9,4 +9,30 @@ require "./caesar.rb"
 
 puts "caesar_cipher demo"
 puts "------------------"
-puts "[1] caesar_cipher(\"What a string!\", 5) = " << caesar_cipher("What a string!", 5)
+puts
+
+puts "[1] caesar_cipher(\"What a string!\", 5)"
+puts "    => " << caesar_cipher("What a string!", 5)
+puts "    caesar_cipher(\"Bmfy f xywnsl!\", 26 - 5)"
+puts "    => " << caesar_cipher("Bmfy f xywnsl!", 26 - 5)
+puts
+
+puts "[2] caesar_cipher(\"Hello, World\", 12)"
+puts "    => " << caesar_cipher("Hello, World", 12)
+puts
+
+puts "[3] caesar_cipher(\"Is ThIs ThE kruStY krAb?\", 7)"
+puts "    => " << caesar_cipher("Is ThIs ThE kruStY krAb?", 7)
+puts
+
+puts "[4] caesar_cipher(\"I'm getting... sleepy.... ZZZZZZZZZZZ\", 25)"
+puts "    => " << caesar_cipher("I'm getting... sleepy.... ZZZZZZZZZZZ", 25)
+puts
+
+puts "[5] caesar_cipher(\"To be, or not to be? That is the question.\", 26)"
+puts "    => " << caesar_cipher("To be, or not to be? That is the question.", 26)
+puts
+
+puts "[6] caesar_cipher(\"Tvcvjkv zj r xivrk xrdv\", 9)"
+puts "    => " << caesar_cipher("Tvcvjkv zj r xivrk xrdv", 9)
+puts

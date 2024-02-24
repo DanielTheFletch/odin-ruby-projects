@@ -3,6 +3,9 @@
 # Caesar Cipher
 
 
+# TODO: Fix late uppercase letters becoming early lowercase letters
+
+
 # Required function: Apply Caesar cipher of specified shift amount
 def caesar_cipher(phrase, shift)
   shifted = phrase.chars.map do |char|
