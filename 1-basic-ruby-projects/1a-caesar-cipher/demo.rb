@@ -36,3 +36,14 @@ puts
 puts "[6] caesar_cipher(\"Tvcvjkv zj r xivrk xrdv\", 9)"
 puts "    => " << caesar_cipher("Tvcvjkv zj r xivrk xrdv", 9)
 puts
+
+puts "[Interactive Example]"
+print "Enter a word or phrase: "
+user_phrase = gets.chomp
+print "Enter a shift amount: "
+user_shift = gets.chomp.to_i
+puts
+
+puts "[I] caesar_cipher(\"#{user_phrase}\", #{user_shift})"
+puts "    => " << caesar_cipher(user_phrase, user_shift)
+puts
