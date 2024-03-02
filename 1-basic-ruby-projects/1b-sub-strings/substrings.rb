@@ -10,11 +10,11 @@ def substrings(string, possible)
   lower_arr = possible.map { |substring| substring.downcase }
 
   # Retrieve all valid substrings in provided list
-  valid = possible.filter { |substring| lower.include?(substring.downcase) }
+  valid = lower_arr.filter { |substring| lower_str.include?(substring) }
 
   # Count times each valid substring appears
   valid.reduce(Hash.new(0)) do |counts, substring|
-    lower.scan(substring.downcase) { |instance| counts[instance] += 1 }
+    lower_str.scan(substring) { |instance| counts[instance] += 1 }
     counts
   end
 end
