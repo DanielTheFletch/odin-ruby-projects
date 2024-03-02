@@ -1,6 +1,8 @@
-# Project 1b: Substrings
+# Project 1b: Sub Strings
 
-My Ruby implementation of a substring counter utility. When provided with a single word/phrase alongside a corresponding list of possible substrings, it determines which of the listed possibilities are actual substrings of the word and notes how many times each substring occurs. For example, consider the scenario provided in the project specifications:
+My Ruby implementation of a substring counter utility.
+
+When provided with a single word/phrase alongside a corresponding list strings, it determines which of the listed strings are substrings of the provided word while also tracking how many times each substring occurs. Consider the following example from the project specifications:
 
 ```rb
 > dictionary = ["below", "down", "go", "going", "horn", "how", "howdy", "it", "i", "low", "own", "part", "partner", "sit"]
@@ -15,15 +17,15 @@ My Ruby implementation of a substring counter utility. When provided with a sing
 
 ## Included Files
 
-- `substrings.rb` &ndash; Contains all code and functions required by the project specifications, including:
-    - `substrings(phrase, dict)` &ndash; Placeholder text.
+- `substrings.rb` &ndash; Contains all methods and implementations required by the project specifications, including:
+    - `#substrings` &ndash; Takes a word as the first argument and an array of valid substrings as the second argument; returns a hash listing each substring (case insensitive) that was found in the original string and how many times it was found.
 - `demo.rb` &ndash; Contains sample code for demonstrating the project's functionality.
 To run the demo, please see the instructions below.
 - `README.md` &ndash; The file you're currently reading!
 
 ## Demo File
 
-To run the included demo file (`demo.rb`), clone this directory into your own environment. With Ruby installed, execute the following command from within the cloned directory:
+To run the included demo file (`demo.rb`), copy this directory into your own environment. With Ruby installed, execute the following command from within the copied directory:
 
 ```
 $ ruby demo.rb

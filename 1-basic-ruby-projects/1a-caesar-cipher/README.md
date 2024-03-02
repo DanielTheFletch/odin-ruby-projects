@@ -1,11 +1,21 @@
 # Project 1a: Caesar Cipher
 
-My Ruby implementation of the encryption technique known as the [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher). Includes a demonstration file for use at the terminal.
+My Ruby implementation of the encryption technique known as the [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher).
+
+Consider these examples:
+
+```rb
+> caesar_cipher("What a string!", 5)
+=> "Bmfy f xywnsl!"
+
+> caesar_cipher("Spwwz, xj ylxp td Olytpw", 15)
+=> "Hello, my name is Daniel"
+```
 
 ## Included Files
 
-- `caesar.rb` &ndash; Contains all code and functions required by the project specifications, including:
-    - `caesar_cipher(phrase, shift)` &ndash; Performs the Caesar cipher algorithm on `phrase` by the given `shift` amount.
+- `caesar.rb` &ndash; Contains all methods and implementations required by the project specifications, including:
+    - `#caesar_cipher` &ndash; Takes in a string and the shift factor as arguments; returns the modified string.
 - `demo.rb` &ndash; Contains sample code for demonstrating the project's functionality.
 To run the demo, please see the instructions below.
 - `README.md` &ndash; The file you're currently reading!
