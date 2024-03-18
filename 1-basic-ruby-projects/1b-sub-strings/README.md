@@ -2,7 +2,7 @@
 
 My Ruby implementation of a substring counter utility.
 
-When provided with a single word/phrase alongside a corresponding list strings, it determines which of the listed strings are substrings of the provided word while also tracking how many times each substring occurs. Consider the following example from the project specifications:
+When provided with a single word/phrase and a list of strings, it determines which of the listed strings are valid substrings of the specified word/phrase while also tracking how many unique times each substring occurs. Consider the following example from the project specifications:
 
 ```rb
 > dictionary = ["below", "down", "go", "going", "horn", "how", "howdy", "it", "i", "low", "own", "part", "partner", "sit"]
