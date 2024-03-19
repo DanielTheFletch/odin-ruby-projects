@@ -4,8 +4,11 @@ Contains the four required projects in the **Basic Ruby Projects** module. Part 
 
 ## Included Projects
 
-**[1a] &mdash; Caesar Cipher** | [Specifications](https://www.theodinproject.com/lessons/ruby-caesar-cipher)  
+**1a) Caesar Cipher** | [Specifications](https://www.theodinproject.com/lessons/ruby-caesar-cipher)  
 My Ruby implementation of the encryption technique known as the [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher).
 
-**[1b] &mdash; Sub-Strings** | [Specifications](https://www.theodinproject.com/lessons/ruby-sub-strings)  
-My Ruby implementation of a substring counter utility.
+**1b) Sub-Strings** | [Specifications](https://www.theodinproject.com/lessons/ruby-sub-strings)  
+My Ruby implementation of a substring counter utility. When provided with a single word/phrase and a list of strings, it determines which of the listed strings are valid substrings of the specified word/phrase while also tracking how many unique times each substring occurs.
+
+**1c) Stock Picker** | [Specifications](https://www.theodinproject.com/lessons/ruby-stock-picker)  
+My Ruby implementation of a stock-trading optimization tool. Given a series of day-by-day stock prices, the stock picker determines the optimal day to buy and the corresponding optimal day to sell.
