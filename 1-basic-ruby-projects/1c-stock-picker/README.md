@@ -10,6 +10,7 @@ Consider the following example from the project specifications:
 
 #  Day 1 price: $3
 #  Day 4 price: $15
+# ------------------
 # Total profit: $15 - $3 = $12
 ```
 
@@ -28,7 +29,7 @@ To run the included demo file (`demo.rb`), copy this directory into your own env
 $ ruby demo.rb
 ```
 
-The demo presents five (5) hard-coded examples along with one interactive example that calls for user input.
+The demo presents four (4) hard-coded examples along with one interactive example that calls for user input.
 
 ## Technologies Used
 
