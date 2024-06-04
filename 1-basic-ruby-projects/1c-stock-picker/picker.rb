@@ -4,28 +4,24 @@
 
 
 def stock_picker(prices)
-  # O(n^2) solution
-  max_profit = 0
-  max_pair = []
+  # Calculate max possible profit margins for each day
+  profits = []
+  prices.each_index do |buy_index|
+    # Retrieve index of best possible sell day
+    remaining_prices = prices.last(prices.size - (buy_index + 1))
+    sell_index = prices.index(remaining_prices.max)
 
-  prices.each_with_index do |buy_price, buy_index|
-    prices.each_with_index do |sell_price, sell_index|
-      if sell_index > buy_index
-        profit = sell_price - buy_price
-        if profit > max_profit
-          max_profit = profit
-          max_pair = [buy_index, sell_index]
-          puts max_profit
-          puts max_pair.to_s
-        end
-      end
+    # Package indices and profit together in hashes
+    unless sell_index.nil?
+      profits.append({
+        buy_index: buy_index,
+        sell_index: sell_index,
+        profit: prices[sell_index] - prices[buy_index]
+      })
     end
   end
 
-  puts "Final max profit: #{max_profit}"
-  puts "Final max pair:   #{max_pair}"
-  max_pair
+  # Find the greatest of these profits
+  max_profit = profits.max { |a, b| a[:profit] <=> b[:profit] }
+  [max_profit[:buy_index], max_profit[:sell_index]]
 end
-
-
-stock_picker([1, 5, 4, 2, 3])
