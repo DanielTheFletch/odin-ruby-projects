@@ -29,3 +29,18 @@ puts
 puts "[5] bubble_sort([2, 4, 6, 8])"
 puts "    => " << bubble_sort([2, 4, 6, 8]).to_s
 puts
+
+puts "[Interactive Example]"
+puts "Enter a list of integers, one at a time."
+puts "Submit a blank line to stop processing input."
+
+user_input = gets.chomp
+user_array = []
+until user_input.empty?
+    user_array.push(user_input.to_i)
+    user_input = gets.chomp
+end
+
+puts "[I] bubble_sort(#{user_array.to_s})"
+puts "    => " << bubble_sort(user_array).to_s
+puts
