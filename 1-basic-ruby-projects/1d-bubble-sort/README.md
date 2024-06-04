@@ -1,6 +1,6 @@
 # Project 1d: Bubble Sort
 
-My Ruby implementation of the bubble sort algorithm.
+My Ruby implementation of the [bubble sort algorithm](http://en.wikipedia.org/wiki/Bubble_sort).
 
 Consider the following example from the project specifications:
 

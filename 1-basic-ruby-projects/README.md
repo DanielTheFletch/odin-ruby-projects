@@ -14,4 +14,4 @@ My Ruby implementation of a substring counter utility. When provided with a sing
 My Ruby implementation of a stock-trading optimization tool. Given a series of day-by-day stock prices, the stock picker determines the optimal day to buy and the corresponding optimal day to sell.
 
 **1d) Bubble Sort** | [Specifications](https://www.theodinproject.com/lessons/ruby-bubble-sort)  
-My Ruby implementation of the bubble sort algorithm.
+My Ruby implementation of the [bubble sort algorithm](http://en.wikipedia.org/wiki/Bubble_sort).
