@@ -24,7 +24,7 @@ To run the included demo file (`demo.rb`), copy this directory into your own env
 $ ruby demo.rb
 ```
 
-The demo presents four (4) hard-coded examples along with one interactive example that calls for user input.
+The demo presents five (5) hard-coded examples along with one interactive example that calls for user input.
 
 ## Technologies Used
 
