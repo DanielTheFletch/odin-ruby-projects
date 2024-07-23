@@ -1,6 +1,6 @@
 # Project 2a: Tic Tac Toe
 
-The classic game of Tic Tac Toe, playable by two human players at the command line.
+The classic game of Tic Tac Toe, playable on the command line where two human players can play against each other and the board is displayed in between turns.
 
 Example run:
 
