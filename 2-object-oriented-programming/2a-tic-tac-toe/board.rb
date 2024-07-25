@@ -24,19 +24,23 @@ class Board
     @player_turn = 0
   end
 
+  # Update board state based on player selection
   def update_board(choice)
+    success = false
+
     if valid_choice?(choice)
       player_turn.even? ? value = 1 : value = -1
       @board_state[choice - 1] = value
       @player_turn += 1
-      true
-    else
-      false
+      success = true
     end
+
+    success
   end
 
   private
 
+  # Validate numeric board selection
   def valid_choice?(choice)
     choice.between?(1, 9) && @board_state[choice - 1] == 0
   end
