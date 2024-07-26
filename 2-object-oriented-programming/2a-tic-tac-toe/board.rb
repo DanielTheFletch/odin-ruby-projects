@@ -2,20 +2,7 @@
 # The Odin Project: Ruby
 # Tic Tac Toe
 
-# Board class
-
-# -- Member data --
-# Board state
-# Player turn tracker
-
-# -- Behavior --
-# Take turn (e.g., update board)
-# Display board (e.g., print to terminal)
-# Check victory condition (X's, O's)
-# Check for a tie
-
 class Board
-  # Member data (read-only)
   attr_reader :board_state, :player_turn
 
   def initialize
@@ -24,12 +11,12 @@ class Board
   end
 
   # Update board state based on player selection
-  def update_board(choice)
+  def update_board(placement_index)
     success = false
 
-    if valid_choice?(choice) && @player_turn < 9
+    if valid_choice?(placement_index) && @player_turn < 9
       player_turn.even? ? value = -1 : value = 1
-      @board_state[choice - 1] = value
+      @board_state[placement_index] = value
       @player_turn += 1
       success = true
     end
@@ -54,8 +41,13 @@ class Board
 
     board_string
   end
+
+  # Check for game end
+  def game_over?
+    @player_turn == 9 || win_game?("X") || win_game?("O")
+  end
   
-  # Check winning state for X or O
+  # Check win state for X or O
   def win_game?(player)
     placements = player == "X" ? get_x_placements : get_o_placements
 
@@ -68,11 +60,13 @@ class Board
     false
   end
 
+  # --------------------
+
   private
 
   # Validate numeric board selection
-  def valid_choice?(choice)
-    choice.between?(1, 9) && @board_state[choice - 1].zero?
+  def valid_choice?(placement_index)
+    placement_index.between?(0, 8) && @board_state[placement_index].zero?
   end
 
   # Retrieve board row as string
