@@ -27,7 +27,7 @@ class Board
   def update_board(choice)
     success = false
 
-    if valid_choice?(choice)
+    if valid_choice?(choice) && @player_turn < 9
       player_turn.even? ? value = -1 : value = 1
       @board_state[choice - 1] = value
       @player_turn += 1
@@ -53,6 +53,19 @@ class Board
     board_string << row_to_string(6..8) << "\n"
 
     board_string
+  end
+  
+  # Check winning state for X or O
+  def win_game?(player)
+    placements = player == "X" ? get_x_placements : get_o_placements
+
+    win_layouts.each do |layout|
+      if placements.intersection(layout).size >= 3
+        return true
+      end
+    end
+
+    false
   end
 
   private
@@ -84,13 +97,46 @@ class Board
 
     row_string
   end
+
+  # Retrieve index values of X board placements
+  def get_x_placements
+    (0..8).filter { |index| @board_state[index] < 0 }
+  end
+
+  # Retrieve index values of O board placements
+  def get_o_placements
+    (0..8).filter { |index| @board_state[index] > 0 }
+  end
+
+  # Array of combinations of index values representing a win state
+  def win_layouts
+    [
+      [0, 1, 2], [3, 4, 5], [6, 7, 8],      # Horizontal
+      [0, 3, 6], [1, 4, 7], [2, 5, 8],      # Vertical
+      [0, 4, 8], [2, 4, 6]                  # Diagonal
+    ]
+  end
 end
 
 
 # Testing
-board = Board.new()
-board.update_board(1)
+board = Board.new
+board.update_board(6)
 board.update_board(5)
+board.update_board(8)
+board.update_board(2)
+board.update_board(4)
+board.update_board(1)
 board.update_board(3)
+board.update_board(9)
+puts
+
 puts "Board State:"
 puts board
+puts
+
+puts "X wins: #{board.win_game?("X")}"
+puts
+
+puts "O wins: #{board.win_game?("O")}"
+puts
