@@ -42,6 +42,24 @@ class Board
     board_string
   end
 
+  # Return string representation of empty board
+  def empty_board_display(top, middle, bottom)
+    empty_board_string = ""
+
+    # Top row
+    empty_board_string << " #{top[0]} | #{top[1]} | #{top[2]}" << "\n"
+
+    # Middle row and row borders
+    empty_board_string << "-" * 11 << "\n"
+    empty_board_string << " #{middle[0]} | #{middle[1]} | #{middle[2]}" << "\n"
+    empty_board_string << "-" * 11 << "\n"
+
+    # Bottom row
+    empty_board_string << " #{bottom[0]} | #{bottom[1]} | #{bottom[2]}" << "\n"
+
+    empty_board_string
+  end
+
   # Check for game end
   def game_over?
     @player_turn == 9 || win_game?("X") || win_game?("O")
@@ -86,6 +104,8 @@ class Board
       # Row border
       if index % 3 != 2
         row_string << "|".rjust(2)
+      else
+        row_string << " "
       end
     end
 
