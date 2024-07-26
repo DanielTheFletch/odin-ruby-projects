@@ -117,26 +117,3 @@ class Board
     ]
   end
 end
-
-
-# Testing
-board = Board.new
-board.update_board(6)
-board.update_board(5)
-board.update_board(8)
-board.update_board(2)
-board.update_board(4)
-board.update_board(1)
-board.update_board(3)
-board.update_board(9)
-puts
-
-puts "Board State:"
-puts board
-puts
-
-puts "X wins: #{board.win_game?("X")}"
-puts
-
-puts "O wins: #{board.win_game?("O")}"
-puts
