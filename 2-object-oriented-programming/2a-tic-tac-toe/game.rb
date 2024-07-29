@@ -42,9 +42,32 @@ def main
   end
 
   # Display game over message
-  puts "---------------"
-  puts "   GAME OVER   "
-  puts "---------------"
+  puts "GAME OVER!"
+  puts
+  puts "=" * 30
+  puts
+  puts "Final Standings".rjust(22)
+  puts
+
+
+  # Extract/format board displays
+  board_display = game_board.to_s.split("\n")
+  empty_display = game_board.empty_board_display(
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+  ).split("\n")
+
+  # Print board displays
+  board_display.each_index do |index|
+    print board_display[index]
+    print " " * 8
+    print empty_display[index]
+    puts
+  end
+  puts
+
+  puts "=" * 30
   puts
 
   # Display game results
@@ -87,11 +110,21 @@ end
 
 # Print victory message (O) in ASCII art
 def print_victory_o
+  puts '  ___                _             _ '
+  puts ' / _ \     __      _(_)_ __  ___  | |'
+  puts '| | | |    \ \ /\ / / | \'_ \/ __| | |'
+  puts '| |_| |     \ V  V /| | | | \__ \ |_|'
+  puts ' \___/       \_/\_/ |_|_| |_|___/ (_)'
   puts
 end
 
 # Print draw message in ASCII art
 def print_draw
+  puts '____'                        
+  puts '|  _ \ _ __ __ ___      __'    
+  puts '| | | | \'__/ _` \ \ /\ / /'    
+  puts '| |_| | | | (_| |\ V  V /   _' 
+  puts '|____/|_|  \__,_| \_/\_/   (_)'
   puts
 end
 
