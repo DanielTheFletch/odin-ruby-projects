@@ -18,22 +18,8 @@ def main
     puts "'#{game_board.player_turn.even? ? "X" : "O"}' to play."
     puts
 
-    # Extract/format board displays
-    board_display = game_board.to_s.split("\n")
-    empty_display = game_board.empty_board_display(
-      [1, 2, 3],
-      [4, 5, 6],
-      [7, 8, 9]
-    ).split("\n")
-
-    # Print board displays
-    board_display.each_index do |index|
-      print board_display[index]
-      print " " * 8
-      print empty_display[index]
-      puts
-    end
-    puts
+    # Display game board
+    print_board(game_board)
 
     # Prompt player input
     print "Enter '#{game_board.player_turn.even? ? "X" : "O"}' placement [1-9]: "
@@ -41,18 +27,22 @@ def main
     puts
   end
 
-  # Display game over message
-  puts "GAME OVER!"
-  puts
-  puts "=" * 30
-  puts
-  puts "Final Standings".rjust(22)
-  puts
+  # Display game results
+  print_game_over(game_board)
+  if game_board.win_game?("X")
+    print_victory_x
+  elsif game_board.win_game?("O")
+    print_victory_o
+  else
+    print_draw
+  end
+end
 
-
+# Print game board with side-by-side numeric key
+def print_board(board)
   # Extract/format board displays
-  board_display = game_board.to_s.split("\n")
-  empty_display = game_board.empty_board_display(
+  board_display = board.to_s.split("\n")
+  empty_display = board.empty_board_display(
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9]
@@ -66,18 +56,23 @@ def main
     puts
   end
   puts
+end
 
-  puts "=" * 30
+# Print game over message
+def print_game_over(board)
+  puts "GAME OVER."
   puts
 
-  # Display game results
-  if game_board.win_game?("X")
-    print_victory_x
-  elsif game_board.win_game?("O")
-    print_victory_o
-  else
-    print_draw
-  end
+  puts "=" * 31
+  puts
+
+  puts "Final Standings".rjust(23)
+  puts
+
+  print_board(board)
+
+  puts "=" * 31
+  puts
 end
 
 # Print game title in ASCII art
