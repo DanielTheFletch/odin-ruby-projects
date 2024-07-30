@@ -1,3 +1,5 @@
+require 'colorize'
+
 module Mastermind
   class Puzzle
     attr_reader :guesses
@@ -10,13 +12,27 @@ module Mastermind
 
     def process_guess(guess)
       @guesses += 1
-      format_code(guess) == @solution
+      guess = format_code(guess)
+      puts guess_to_string(guess)
+      guess == @solution
     end
 
     private
 
     def format_code(code)
       code.upcase.split('')
+    end
+
+    def guess_to_string(guess)
+      guess_string = ""
+
+      guess.each { |color| guess_string << get_peg_string(color) << " " * 2 }
+
+      guess_string
+    end
+
+    def get_peg_string(color)
+      "O".colorize(:blue)
     end
 
     # Validate code length
