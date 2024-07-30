@@ -4,6 +4,14 @@
 
 require_relative 'lib/mastermind'
 
+puzzle = Mastermind::Puzzle.new('RGBR', 12)
+
+guess = gets.chomp
+
+until puzzle.process_guess(guess)
+  guess = gets.chomp
+end
+
 # Puzzle class
 # Initialize with correct solution
 # Track guesses
