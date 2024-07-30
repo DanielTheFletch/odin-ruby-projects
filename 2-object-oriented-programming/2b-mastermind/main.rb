@@ -2,6 +2,8 @@
 # The Odin Project: Ruby
 # Mastermind
 
+require_relative 'lib/mastermind'
+
 # Puzzle class
 # Initialize with correct solution
 # Track guesses
