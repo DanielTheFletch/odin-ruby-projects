@@ -19,6 +19,7 @@ module Mastermind
       @guesses += 1
       guess = code_to_colors(guess)
       puts guess_to_string(guess)
+      puts accuracy_to_string(guess)
       guess == @solution
     end
 
@@ -52,9 +53,52 @@ module Mastermind
       guess_string
     end
 
+    def accuracy_to_string(guess)
+      accuracy_pegs = Array.new(4, " ")
+      solution_hash = get_solution_hash
+
+      # Exact matches
+      guess.each_index do |index|
+        color = guess[index]
+        if color == @secret_code[index] && solution_hash[color] > 0
+          accuracy_pegs[index] = "*".colorize(:red)
+          solution_hash[color] -= 1
+        end
+      end
+
+      # Near matches
+      guess.each_index do |index|
+        color = guess[index]
+        if color != @secret_code[index] && solution_hash[color] > 0
+          accuracy_pegs[index] = "*".colorize(:white)
+          solution_hash[color] -= 1
+        end
+      end
+
+      # Create string
+      accuracy_string = ""
+      accuracy_pegs.each { |peg| accuracy_string << peg << " " * 2 }
+      accuracy_string
+    end
+
     # Retrieve the string representation of a colored peg
     def get_peg(color)
       "O".colorize(color)
+    end
+
+    def get_solution_hash
+      hash = {
+        light_red: 0,
+        light_cyan: 0,
+        light_green: 0,
+        light_yellow: 0,
+        light_magenta: 0,
+        light_white: 0
+      }
+
+      @secret_code.each { |color| hash[color] += 1 }
+
+      hash
     end
 
     # Validate code length
