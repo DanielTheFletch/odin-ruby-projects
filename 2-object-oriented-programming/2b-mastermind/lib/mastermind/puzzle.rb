@@ -20,7 +20,7 @@ module Mastermind
       guess = code_to_colors(guess)
       puts guess_to_string(guess)
       puts accuracy_to_string(guess)
-      guess == @solution
+      guess == @secret_code
     end
 
     private
