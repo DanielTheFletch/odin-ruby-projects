@@ -12,6 +12,8 @@ until puzzle.process_guess(guess)
   guess = gets.chomp
 end
 
+puts String.colors
+
 # Puzzle class
 # Initialize with correct solution
 # Track guesses

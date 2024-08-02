@@ -32,7 +32,19 @@ module Mastermind
     end
 
     def get_peg_string(color)
-      "O".colorize(:blue)
+      "O".colorize(char_to_color(color))
+    end
+
+    def char_to_color(char)
+      case char
+      when 'R' then :red
+      when 'B' then :light_cyan
+      when 'G' then :light_green
+      when 'Y' then :light_yellow
+      when 'P' then :light_magenta
+      when 'W' then :light_white
+      else nil
+      end
     end
 
     # Validate code length
