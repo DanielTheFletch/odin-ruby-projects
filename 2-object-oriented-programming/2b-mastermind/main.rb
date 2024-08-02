@@ -4,7 +4,14 @@
 
 require_relative 'lib/mastermind'
 
-puzzle = Mastermind::Puzzle.new('RGBR', 12)
+COLORS = ['R', 'B', 'G', 'Y', 'P', 'W']
+
+color1 = COLORS[Random.rand(6)]
+color2 = COLORS[Random.rand(6)]
+color3 = COLORS[Random.rand(6)]
+color4 = COLORS[Random.rand(6)]
+
+puzzle = Mastermind::Puzzle.new("#{color1}#{color2}#{color3}#{color4}", 12)
 
 guess = gets.chomp
 
