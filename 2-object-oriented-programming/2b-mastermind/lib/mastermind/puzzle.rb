@@ -26,7 +26,7 @@ module Mastermind
       accuracy_display1 = accuracy_pegs[0...2].join()
       accuracy_display2 = accuracy_pegs[2...4].join()
 
-      main_display = "#{guess_display}" << " " * 10 << "#{accuracy_display1}"
+      main_display = "\n#{guess_display}" << " " * 10 << "#{accuracy_display1}"
       main_display += "\n" << " " * 22 << "#{accuracy_display2}" << "\n"
 
       puts main_display

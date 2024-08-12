@@ -18,9 +18,18 @@ color4 = 'R'
 
 puzzle = Mastermind::Puzzle.new("#{color1}#{color2}#{color3}#{color4}", 12)
 
+print "[#1]\n"
+print "> "
 guess = gets.chomp
 
+index = 2
+
 until puzzle.process_guess(guess)
+
+  print "[##{index}]\n"
+  print "> "
+
+  index += 1
   guess = gets.chomp
 end
 
