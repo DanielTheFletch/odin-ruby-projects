@@ -18,8 +18,18 @@ module Mastermind
     def process_guess(guess)
       @guesses += 1
       guess = code_to_colors(guess)
-      puts guess_to_string(guess)
-      puts accuracy_to_string(guess)
+
+      guess_pegs = get_guess_pegs(guess)
+      accuracy_pegs = get_accuracy_pegs(guess)
+
+      guess_display = guess_pegs.join()
+      accuracy_display1 = accuracy_pegs[0...2].join()
+      accuracy_display2 = accuracy_pegs[2...4].join()
+
+      main_display = "#{guess_display}" << " " * 10 << "#{accuracy_display1}"
+      main_display += "\n" << " " * 22 << "#{accuracy_display2}" << "\n"
+
+      puts main_display
       guess == @secret_code
     end
 
@@ -44,24 +54,25 @@ module Mastermind
       code.upcase.split('').map { |char| char_to_color(char) }
     end
 
-    # Convert a guess to colored pegs as a string
-    def guess_to_string(guess)
-      guess_string = ""
+    # Convert a guess to colored pegs as an array of strings
+    def get_guess_pegs(guess)
+      guess_pegs = []
 
-      guess.each { |color| guess_string << get_peg(color) << " " * 2 }
+      guess.each { |color| guess_pegs.push(get_peg(color) << " " * 2) }
 
-      guess_string
+      guess_pegs
     end
 
-    def accuracy_to_string(guess)
-      accuracy_pegs = Array.new(4, " ")
+    def get_accuracy_pegs(guess)
+      red_pegs = 0
+      white_pegs = 0
       solution_hash = get_solution_hash
 
       # Exact matches
       guess.each_index do |index|
         color = guess[index]
         if color == @secret_code[index] && solution_hash[color] > 0
-          accuracy_pegs[index] = "*".colorize(:red)
+          red_pegs += 1
           solution_hash[color] -= 1
         end
       end
@@ -70,15 +81,20 @@ module Mastermind
       guess.each_index do |index|
         color = guess[index]
         if color != @secret_code[index] && solution_hash[color] > 0
-          accuracy_pegs[index] = "*".colorize(:white)
+          white_pegs += 1
           solution_hash[color] -= 1
         end
       end
 
       # Create string
-      accuracy_string = ""
-      accuracy_pegs.each { |peg| accuracy_string << peg << " " * 2 }
-      accuracy_string
+      accuracy_pegs = []
+      red_pegs.times { |i| accuracy_pegs.push("*".colorize(:red) << " " * 2) }
+      white_pegs.times { |i| accuracy_pegs.push("*".colorize(:white) << " " * 2) }
+
+      empty_peg_slots = 4 - (red_pegs + white_pegs)
+      empty_peg_slots.times { |i| accuracy_pegs.push("_" << " " * 2) }
+
+      accuracy_pegs
     end
 
     # Retrieve the string representation of a colored peg
